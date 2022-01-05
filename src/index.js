@@ -14,6 +14,7 @@ const distancePercentComplete = document.querySelector('.distance-percent-comple
 const speed = document.querySelector('.speed-km-s');
 const tempCold = document.querySelector('.temp-cold-side');
 const tempWarm = document.querySelector('.temp-warm-side');
+const image = document.querySelector('.webb-img');
 
 // Fetcb data from JWST api
 (async () => {
@@ -26,6 +27,7 @@ const tempWarm = document.querySelector('.temp-warm-side');
 
     const response = await axios.get(api);
     const data = response.data;
+    console.log(data);
 
     results.style.display = "block";
     loading.style.display = "none";
@@ -38,6 +40,7 @@ const tempWarm = document.querySelector('.temp-warm-side');
     speed.textContent = data.speedKmS;
     tempCold.textContent = data.tempC.tempCoolSide1C;
     tempWarm.textContent = data.tempC.tempWarmSide1C;
+    image.src = data.deploymentImgURL;
   } catch(e) {
     loading.style.display = "none";
     results.style.display = "none";
