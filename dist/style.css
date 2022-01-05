@@ -5,6 +5,10 @@ body {
   color:  whitesmoke;
 }
 
+a {
+  color:  white;
+}
+
 .data {
   display:  flex;
   flex-direction: row;
